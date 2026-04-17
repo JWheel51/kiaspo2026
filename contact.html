@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Kiaspo Research</title>
+  <meta name="description" content="Get in touch with Kiaspo. Start with a free 30-minute discovery call to discuss your research needs.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="logo">Blac<span>uity</span></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta active">Get In Touch</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="padding-bottom: 4rem;">
+    <div class="section-label">Contact Us</div>
+    <h1 class="section-title">Let's start with a conversation.</h1>
+    <p class="section-sub">Tell us a bit about your project and we'll be in touch within one business day. The first call is always free.</p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>What to expect</h3>
+        <p>After you reach out, we'll schedule a free 30-minute discovery call to learn about your goals and see if we're the right fit. No pressure, no sales pitch.</p>
+
+        <h3 style="margin-top:2rem;">Good fits for Blacuity</h3>
+        <p>We work best with organizations that:</p>
+        <ul style="list-style:none; margin-top:0.5rem;">
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0; font-size:0.92rem; color:#5a6e85;">✦ Have a specific question they need answered</li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0; font-size:0.92rem; color:#5a6e85;">✦ Are open to data-driven findings, even surprising ones</li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0; font-size:0.92rem; color:#5a6e85;">✦ Want a collaborative partner, not just a vendor</li>
+          <li style="padding: 0.5rem 0; font-size:0.92rem; color:#5a6e85;">✦ Are ready to act on what they learn</li>
+        </ul>
+
+        <div style="margin-top:2.5rem; padding:1.5rem; background:var(--navy); border-radius:8px;">
+          <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:0;">
+            <span style="color:var(--gold); font-weight:600;">Response time:</span> We reply to all inquiries within one business day.
+          </p>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <!-- 
+        TO ACTIVATE THIS FORM:
+        1. Go to formspree.io and create a free account
+        2. Create a new form and copy your unique form ID
+        3. Replace YOUR_FORM_ID below with your actual ID
+        e.g. action="https://formspree.io/f/xpwzabcd"
+      -->
+      <div class="contact-form">
+        <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--navy); margin-bottom:1.5rem;">Tell us about your project</h3>
+
+        <form action="https://formspree.io/f/xnjlpgkl" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first_name" placeholder="Jane" required>
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last_name" placeholder="Smith" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@organization.org" required>
+          </div>
+
+          <div class="form-group">
+            <label for="org">Organization Name</label>
+            <input type="text" id="org" name="organization" placeholder="Your Business or Nonprofit">
+          </div>
+
+          <div class="form-group">
+            <label for="org-type">Organization Type</label>
+            <select id="org-type" name="org_type">
+              <option value="">Select one...</option>
+              <option value="small-business">Small Business</option>
+              <option value="nonprofit">Nonprofit</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="service">What are you looking for?</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option value="organizational-assessment">Organizational Assessment</option>
+              <option value="program-evaluation">Program Evaluation</option>
+              <option value="survey-design">Survey & Data Design</option>
+              <option value="stakeholder-insights">Stakeholder Insights</option>
+              <option value="strategic-planning">Strategic Planning Support</option>
+              <option value="not-sure">Not Sure Yet</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell us more</label>
+            <textarea id="message" name="message" placeholder="What question are you trying to answer? What decision are you trying to make? Any relevant context about your timeline or budget is helpful." required></textarea>
+          </div>
+
+          <!-- Hidden honeypot field to prevent spam -->
+          <input type="text" name="_gotcha" style="display:none">
+
+          <!-- Redirect after submission (optional) -->
+          <input type="hidden" name="_next" value="https://yourusername.github.io/thank-you.html">
+
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Blac<span>uity</span></a>
+        <p>Research consulting for small businesses and nonprofits that want clarity, not just data.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Kiaspo. All rights reserved.</span>
+      <span>Consultative Research · Nonprofits · Small—Mid-sized Business </span>
+    </div>
+  </footer>
+
+</body>
+</html>
