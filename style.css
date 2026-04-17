@@ -312,7 +312,7 @@ section { padding: 6rem 6%; }
   color: var(--white);
 }
 
-.audience .section-title { color: var(--white); }
+.audience .section-title { color: var(--kiaspo-blue); }
 
 .audience-grid {
   display: grid;
