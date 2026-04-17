@@ -67,19 +67,19 @@ nav ul a:hover, nav ul a.active { color: var(--white); }
 
 .nav-cta {
   background: var(--gold);
-  color: var(--navy) !important;
+  color: var(--kiaspo-blue) !important;
   padding: 0.5rem 1.3rem;
   border-radius: 4px;
   font-weight: 600 !important;
   transition: opacity 0.2s !important;
 }
 
-.nav-cta:hover { opacity: 0.85; color: var(--navy) !important; }
+.nav-cta:hover { opacity: 0.85; color: var(--kiaspo-blue) !important; }
 
 /* ─── HERO ────────────────────────────────── */
 .hero {
   min-height: 100vh;
-  background: var(--navy);
+  background: var(--kiaspo-blue);
   display: flex;
   align-items: center;
   padding: 0 6%;
@@ -157,7 +157,7 @@ nav ul a:hover, nav ul a.active { color: var(--white); }
 
 .btn-primary {
   background: var(--gold);
-  color: var(--navy);
+  color: var(--kiaspo-blue);
   padding: 0.85rem 2rem;
   border-radius: 4px;
   text-decoration: none;
@@ -189,7 +189,7 @@ nav ul a:hover, nav ul a.active { color: var(--white); }
 
 /* ─── STATS STRIP ─────────────────────────── */
 .stats {
-  background: var(--navy-light);
+  background: var(--kiaspo-blue-light);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 2.5rem 6%;
@@ -234,7 +234,7 @@ section { padding: 6rem 6%; }
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   font-weight: 600;
-  color: var(--navy);
+  color: var(--kiaspo-blue);
   line-height: 1.25;
   margin-bottom: 1.2rem;
 }
@@ -296,7 +296,7 @@ section { padding: 6rem 6%; }
   font-family: 'Playfair Display', serif;
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--kiaspo-blue);
   margin-bottom: 0.7rem;
 }
 
@@ -398,7 +398,7 @@ section { padding: 6rem 6%; }
 .process-step h4 {
   font-family: 'Playfair Display', serif;
   font-size: 1.05rem;
-  color: var(--navy);
+  color: var(--kiaspo-blue);
   margin-bottom: 0.5rem;
 }
 
@@ -409,7 +409,7 @@ section { padding: 6rem 6%; }
 
 /* ─── CTA BANNER ──────────────────────────── */
 .cta-banner {
-  background: linear-gradient(135deg, var(--navy-mid), var(--navy));
+  background: linear-gradient(135deg, var(--kiaspo-blue-mid), var(--kiaspo-blue));
   text-align: center;
   padding: 5rem 6%;
 }
@@ -498,7 +498,7 @@ section { padding: 6rem 6%; }
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: var(--navy-mid);
+  border-color: var(--kiaspo-blue-mid);
   box-shadow: 0 0 0 3px rgba(26,58,107,0.08);
 }
 
@@ -506,7 +506,7 @@ section { padding: 6rem 6%; }
 
 .form-submit {
   width: 100%;
-  background: var(--navy);
+  background: var(--kiaspo-blue);
   color: var(--white);
   border: none;
   padding: 0.95rem;
@@ -521,13 +521,13 @@ section { padding: 6rem 6%; }
 }
 
 .form-submit:hover {
-  background: var(--navy-mid);
+  background: var(--kiaspo-blue-mid);
   transform: translateY(-1px);
 }
 
 /* ─── FOOTER ──────────────────────────────── */
 footer {
-  background: var(--navy);
+  background: var(--kiaspo-blue);
   color: var(--text-muted);
   padding: 3rem 6% 2rem;
   border-top: 1px solid var(--border);
@@ -579,7 +579,7 @@ footer {
 
 /* ─── ABOUT PAGE ──────────────────────────── */
 .page-hero {
-  background: var(--navy);
+  background: var(--kiaspo-blue);
   padding: 10rem 6% 6rem;
   position: relative;
   overflow: hidden;
@@ -606,7 +606,7 @@ footer {
 }
 
 .mission-visual {
-  background: var(--navy);
+  background: var(--kiaspo-blue);
   border-radius: 10px;
   padding: 3rem;
   text-align: center;
@@ -646,7 +646,7 @@ footer {
 .value-card h4 {
   font-family: 'Playfair Display', serif;
   font-size: 1.05rem;
-  color: var(--navy);
+  color: var(--kiaspo-blue);
   margin-bottom: 0.5rem;
 }
 
