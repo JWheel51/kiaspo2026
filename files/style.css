@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
 
 :root {
-  --kiaspo blue: #0a6ecc;
-  --kiaspo blue-light: #97c8f7;
-  --kiaspo blue-mid: #3d94e8;
+  --kiaspo-blue: #0a6ecc;
+  --kiaspo-blue-light: #97c8f7;
+  --kiaspo-blue-mid: #3d94e8;
   --white: #ffffff;
   --off-white: #f4f6f9;
   --gold: #c9a84c;
