@@ -367,7 +367,7 @@ section { padding: 6rem 6%; }
 }
 
 /* ─── PROCESS ─────────────────────────────── */
-.process { background: var(--white); }
+.process { background: var(--off-white); }
 
 .process-steps {
   display: grid;
