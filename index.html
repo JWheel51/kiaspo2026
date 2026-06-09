@@ -608,32 +608,7 @@
     
       </div><!-- /form col -->
     </div><!-- /wp-signup-wrap -->
-    
-      <script>
-        (function () {
-          const form    = document.getElementById('wpSignupForm');
-          const success = document.getElementById('wpSuccessMsg');
-        
-          if (!form) return;
-        
-          form.addEventListener('submit', function (e) {
-            e.preventDefault();
-        
-            /* ── Basic validation ──────────────────────────────────── */
-            const email   = form.querySelector('[name="email"]').value.trim();
-            const consent = form.querySelector('[name="consent"]').checked;
-        
-            if (!email || !consent) {
-              const first = form.querySelector(':invalid');
-              if (first) first.focus();
-              return;
-            }
-        
-            /* ── Collect form data ─────────────────────────────────── */
-            const payload = Object.fromEntries(new FormData(form).entries());
-    
-        </div>
-      </section>
+  </section>
   
         
   <!-- WHO WE SERVE -->
