@@ -80,7 +80,558 @@
         <h3>Strategic Planning Support</h3>
         <p>We offer post-research delivery support to prevent 'findings creep' and offer an external perspective.</p>
       </div>
-    </section>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ── Design tokens ─────────────────────────────────────────── */
+  .wp-signup-wrap {
+    --wp-navy:      #0F1E3C;
+    --wp-slate:     #2D4A7A;
+    --wp-amber:     #E8A020;
+    --wp-mist:      #E4EAF2;
+    --wp-paper:     #F7F5F0;
+    --wp-ink:       #1A1A2E;
+    --wp-mid:       #5A6A85;
+    --wp-border:    #CBD5E6;
+    --wp-radius:    10px;
+    --wp-font-ui:   'Inter', sans-serif;
+    --wp-font-disp: 'IBM Plex Serif', Georgia, serif;
+  }
+
+  /* ── Layout shell ──────────────────────────────────────────── */
+  .wp-signup-wrap {
+    background: var(--wp-navy);
+    border-radius: 16px;
+    padding: 56px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    font-family: var(--wp-font-ui);
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* subtle topographic texture overlay */
+  .wp-signup-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 70% 20%, rgba(45,74,122,0.45) 0%, transparent 55%),
+                      radial-gradient(circle at 20% 80%, rgba(232,160,32,0.08) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  /* ── Left column: cover ────────────────────────────────────── */
+  .wp-signup-cover-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* desk-shadow behind the tilted cover */
+  .wp-signup-cover-shadow {
+    position: absolute;
+    width: 72%;
+    height: 88%;
+    background: rgba(0,0,0,0.45);
+    border-radius: 4px;
+    filter: blur(22px);
+    top: 14%;
+    left: 14%;
+    transform: rotate(3deg);
+    z-index: 0;
+  }
+
+  /* the cover card itself — tilted 3° */
+  .wp-signup-cover {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 8.5 / 11;
+    background: var(--wp-paper);
+    border-radius: 4px 8px 8px 4px;
+    transform: rotate(3deg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+      -4px 0 0 0 #c8c0b0,
+      0 2px 4px rgba(0,0,0,0.15);
+  }
+
+  /* spine binding effect */
+  .wp-signup-cover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    background: linear-gradient(to right, #b8b0a0, #ddd8ce);
+    z-index: 2;
+  }
+
+  /* ── Cover image area (user replaces with <img>) ───────────── */
+  .wp-cover-image-zone {
+    flex: 1;
+    background: linear-gradient(155deg, var(--wp-slate) 0%, var(--wp-navy) 60%, #1a0f2e 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* placeholder grid lines — hidden when real image is present */
+  .wp-cover-image-zone:not(:has(img))::after {
+    content: 'Cover Image';
+    font-family: var(--wp-font-ui);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* actual cover image fills the zone */
+  .wp-cover-image-zone img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* amber accent bar on cover */
+  .wp-cover-accent {
+    height: 4px;
+    background: var(--wp-amber);
+    flex-shrink: 0;
+  }
+
+  /* cover footer with title */
+  .wp-cover-footer {
+    padding: 14px 18px 14px 22px;
+    background: var(--wp-paper);
+    flex-shrink: 0;
+  }
+
+  .wp-cover-footer-eyebrow {
+    font-family: var(--wp-font-ui);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--wp-amber);
+    margin-bottom: 4px;
+  }
+
+  .wp-cover-footer-title {
+    font-family: var(--wp-font-disp);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--wp-ink);
+    line-height: 1.35;
+  }
+
+  /* ── Right column: form ────────────────────────────────────── */
+  .wp-signup-form-col {
+    position: relative;
+    z-index: 1;
+  }
+
+  .wp-signup-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--wp-amber);
+    margin: 0 0 14px;
+  }
+
+  .wp-signup-headline {
+    font-family: var(--wp-font-disp);
+    font-size: clamp(22px, 2.4vw, 30px);
+    font-weight: 600;
+    color: var(--wp-paper);
+    line-height: 1.25;
+    margin: 0 0 12px;
+  }
+
+  .wp-signup-subhead {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--wp-mist);
+    margin: 0 0 28px;
+    opacity: 0.85;
+  }
+
+  /* ── Form fields ───────────────────────────────────────────── */
+  .wp-signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .wp-field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .wp-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .wp-field label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--wp-mist);
+    letter-spacing: 0.02em;
+  }
+
+  .wp-field input,
+  .wp-field select {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid var(--wp-border);
+    border-radius: var(--wp-radius);
+    padding: 11px 14px;
+    font-family: var(--wp-font-ui);
+    font-size: 14px;
+    color: var(--wp-paper);
+    outline: none;
+    transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .wp-field select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A6A85' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+  }
+
+  .wp-field select option {
+    background: var(--wp-navy);
+    color: var(--wp-paper);
+  }
+
+  .wp-field input::placeholder {
+    color: rgba(228,234,242,0.35);
+  }
+
+  .wp-field input:focus,
+  .wp-field select:focus {
+    border-color: var(--wp-amber);
+    background: rgba(255,255,255,0.11);
+    box-shadow: 0 0 0 3px rgba(232,160,32,0.15);
+  }
+
+  /* ── Consent checkbox ──────────────────────────────────────── */
+  .wp-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 2px;
+  }
+
+  .wp-consent input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    accent-color: var(--wp-amber);
+    margin-top: 2px;
+    cursor: pointer;
+  }
+
+  .wp-consent label {
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--wp-mid);
+    cursor: pointer;
+  }
+
+  .wp-consent a {
+    color: var(--wp-amber);
+    text-decoration: none;
+  }
+
+  .wp-consent a:hover {
+    text-decoration: underline;
+  }
+
+  /* ── Submit button ─────────────────────────────────────────── */
+  .wp-signup-btn {
+    background: var(--wp-amber);
+    color: var(--wp-navy);
+    border: none;
+    border-radius: var(--wp-radius);
+    padding: 14px 28px;
+    font-family: var(--wp-font-ui);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.18s, transform 0.12s, box-shadow 0.18s;
+    margin-top: 4px;
+  }
+
+  .wp-signup-btn:hover {
+    background: #f0b030;
+    box-shadow: 0 4px 20px rgba(232,160,32,0.35);
+  }
+
+  .wp-signup-btn:active {
+    transform: translateY(1px);
+  }
+
+  .wp-signup-btn svg {
+    flex-shrink: 0;
+  }
+
+  /* ── Success state ─────────────────────────────────────────── */
+  .wp-success-msg {
+    display: none;
+    text-align: center;
+    padding: 24px 0;
+  }
+
+  .wp-success-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(232,160,32,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+  }
+
+  .wp-success-msg h3 {
+    font-family: var(--wp-font-disp);
+    font-size: 20px;
+    color: var(--wp-paper);
+    margin: 0 0 8px;
+  }
+
+  .wp-success-msg p {
+    font-size: 14px;
+    color: var(--wp-mist);
+    margin: 0;
+    opacity: 0.8;
+  }
+
+  /* ── Responsive ────────────────────────────────────────────── */
+  @media (max-width: 860px) {
+    .wp-signup-wrap {
+      grid-template-columns: 1fr;
+      padding: 40px 28px;
+      gap: 36px;
+    }
+
+    .wp-signup-cover-col {
+      order: -1;
+    }
+
+    .wp-signup-cover {
+      max-width: 200px;
+      transform: rotate(2deg);
+    }
+
+    .wp-field-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .wp-signup-wrap {
+      padding: 32px 20px;
+      border-radius: 12px;
+    }
+
+    .wp-signup-headline {
+      font-size: 22px;
+    }
+  }
+
+  /* ── Reduced motion ────────────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    .wp-signup-btn,
+    .wp-field input,
+    .wp-field select {
+      transition: none;
+    }
+  }
+</style>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  EMBEDDABLE COMPONENT — paste inside any <section>         -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="wp-signup-wrap" role="region" aria-label="White paper download sign-up">
+
+  <!-- ── Left: White Paper Cover ─────────────────────────────── -->
+  <div class="wp-signup-cover-col">
+    <div class="wp-signup-cover-shadow" aria-hidden="true"></div>
+
+    <div class="wp-signup-cover" role="img" aria-label="White paper cover">
+      <!--
+        COVER IMAGE ZONE
+        Replace the contents of .wp-cover-image-zone with your actual
+        white paper cover image:
+
+          <div class="wp-cover-image-zone">
+            <img src="/path/to/cover.jpg" alt="White paper cover illustration">
+          </div>
+
+        If no image is available, the zone shows a placeholder tint.
+      -->
+      <div class="wp-cover-image-zone">
+        <!-- ↓ Replace with: <img src="cover.jpg" alt="..."> -->
+      </div>
+
+      <div class="wp-cover-accent"></div>
+
+      <div class="wp-cover-footer">
+        <!--
+          Update these two lines with your white paper's details.
+          The eyebrow could be "White Paper", "Research Report", "Guide", etc.
+        -->
+        <div class="wp-cover-footer-eyebrow">Value Delivery Statement</div>
+        <div class="wp-cover-footer-title">Advancing Together: Lighter and Freer</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Right: Sign-Up Form ─────────────────────────────────── -->
+  <div class="wp-signup-form-col">
+
+    <!-- Update eyebrow, headline, and subhead with your copy -->
+    <p class="wp-signup-eyebrow">How We Deliver Value</p>
+    <h2 class="wp-signup-headline">Get the Full Statement</h2>
+    <p class="wp-signup-subhead">
+      Discover key insights and actionable frameworks for moving for organization forward.
+    </p>
+
+    <form class="wp-signup-form" id="wpSignupForm" novalidate>
+
+      <div class="wp-field-row">
+        <div class="wp-field">
+          <label for="wp-first-name">First name</label>
+          <input type="text" id="wp-first-name" name="first_name"
+                 placeholder="Jane" autocomplete="given-name" required>
+        </div>
+        <div class="wp-field">
+          <label for="wp-last-name">Last name</label>
+          <input type="text" id="wp-last-name" name="last_name"
+                 placeholder="Smith" autocomplete="family-name" required>
+        </div>
+      </div>
+
+      <div class="wp-field">
+        <label for="wp-email">Work email</label>
+        <input type="email" id="wp-email" name="email"
+               placeholder="jane@company.com" autocomplete="email" required>
+      </div>
+
+      <div class="wp-field">
+        <label for="wp-company">Organization</label>
+        <input type="text" id="wp-company" name="company"
+               placeholder="Community Care" autocomplete="organization">
+      </div>
+
+      <div class="wp-field">
+        <label for="wp-role">Job function</label>
+        <select id="wp-role" name="job_function">
+          <option value="" disabled selected>Select your role…</option>
+          <option value="executive">Executive / C-Suite</option>
+          <option value="marketing">Marketing</option>
+          <option value="sales">Sales</option>
+          <option value="finance">Finance</option>
+          <option value="operations">Operations</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="wp-consent">
+        <input type="checkbox" id="wp-consent" name="consent" required>
+        <label for="wp-consent">
+          I agree to receive communications from [Company Name] and accept the
+          <a href="/privacy">Privacy Policy</a>. Unsubscribe any time.
+        </label>
+      </div>
+
+      <button type="submit" class="wp-signup-btn">
+        Sign-up for White Paper
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M8 2v8M5 7l3 3 3-3M3 13h10"
+                stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+    </form>
+
+    <!-- Success message (shown after submit) -->
+    <div class="wp-success-msg" id="wpSuccessMsg" role="alert">
+      <div class="wp-success-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 11l5 5 9-9" stroke="#E8A020" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Check your inbox</h3>
+      <p>Your copy of the white paper is on its way.</p>
+    </div>
+
+  </div><!-- /form col -->
+</div><!-- /wp-signup-wrap -->
+
+<script>
+(function () {
+  const form    = document.getElementById('wpSignupForm');
+  const success = document.getElementById('wpSuccessMsg');
+
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    /* ── Basic validation ──────────────────────────────────── */
+    const email   = form.querySelector('[name="email"]').value.trim();
+    const consent = form.querySelector('[name="consent"]').checked;
+
+    if (!email || !consent) {
+      const first = form.querySelector(':invalid');
+      if (first) first.focus();
+      return;
+    }
+
+    /* ── Collect form data ─────────────────────────────────── */
+    const payload = Object.fromEntries(new FormData(form).entries());
+
+    </div>
+  </section>
         
   <!-- WHO WE SERVE -->
   <section class="audience">
