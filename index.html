@@ -144,7 +144,7 @@
         height: 88%;
         background: rgba(0,0,0,0.45);
         border-radius: 2px;
-        filter: blur(22px);
+        filter: blur(12px);
         top: 14%;
         left: 14%;
         transform: rotate(3deg);
@@ -190,17 +190,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-      }
-    
-      /* placeholder grid lines — hidden when real image is present */
-      .wp-cover-image-zone:not(:has(img))::after {
-        content: 'Cover Image';
-        font-family: var(--wp-font-ui);
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: rgba(255,255,255,0.3);
       }
     
       /* actual cover image fills the zone */
