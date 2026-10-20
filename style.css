@@ -130,7 +130,7 @@ nav ul a:hover, nav ul a.active { color: var(--white); }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 600;
   color: var(--white);
   line-height: 1.2;
